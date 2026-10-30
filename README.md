@@ -96,6 +96,12 @@ node cli/bin/vibe-wrapped.js --dry-run
 VIBE_WRAPPED_SITE=http://localhost:3000 node cli/bin/vibe-wrapped.js
 ```
 
+## Privacy and terms
+
+See [the privacy page](https://vibe-wrapped-ten.vercel.app/privacy) and
+[the terms](https://vibe-wrapped-ten.vercel.app/terms). In short: the CLI runs locally, nothing is
+uploaded or stored, and the project is provided as-is.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).

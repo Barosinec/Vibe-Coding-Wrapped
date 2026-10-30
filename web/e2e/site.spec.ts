@@ -138,3 +138,18 @@ test('autoplay: the final slide gets its own progress segment', async ({ page })
   await expect(fills.last()).toHaveAttribute('data-state', 'running');
   await expect(fills.nth(10)).toHaveAttribute('data-state', 'done');
 });
+
+test('privacy and terms pages are linked from the footer and readable', async ({ page }, info) => {
+  await page.goto('/');
+  await page.locator('footer').getByRole('link', { name: 'Privacy' }).click();
+  await expect(page).toHaveURL(/\/privacy$/);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Privacy');
+  await expect(page.getByText('no cookies, no analytics and no trackers')).toBeVisible();
+  await expect(page.getByRole('link', { name: 'GitHub' }).first()).toHaveAttribute('href', /Vibe-Coding-Wrapped\/issues/);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(info.project.use.viewport!.width);
+  await page.getByRole('link', { name: 'Terms' }).click();
+  await expect(page).toHaveURL(/\/terms$/);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Terms');
+  await expect(page.getByText('provided “as is”')).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(info.project.use.viewport!.width);
+});

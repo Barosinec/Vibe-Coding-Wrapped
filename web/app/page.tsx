@@ -147,6 +147,10 @@ export default function Home() {
       </section>
 
       <footer className="footer">
+        <nav aria-label="Legal">
+          <Link href="/privacy">Privacy</Link>
+          <Link href="/terms">Terms</Link>
+        </nav>
         <p>
           Open source on{' '}
           <a href={GITHUB_URL} rel="noopener">
