@@ -1,0 +1,10 @@
+{
+  "name": "vibe-wrapped-monorepo",
+  "private": true,
+  "workspaces": ["cli", "web"],
+  "scripts": {
+    "test": "node --test cli/test/",
+    "dev": "npm run dev -w web",
+    "build": "npm run build -w web"
+  }
+}

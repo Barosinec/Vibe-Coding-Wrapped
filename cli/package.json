@@ -1,0 +1,37 @@
+{
+  "name": "@vibewrap/vibe-wrapped",
+  "version": "0.1.0",
+  "description": "Spotify Wrapped for your AI coding sessions (Claude Code, Codex, Cursor). Stats are computed locally and travel inside the share link; nothing is stored.",
+  "type": "module",
+  "bin": {
+    "vibe-wrapped": "bin/vibe-wrapped.js"
+  },
+  "exports": {
+    ".": "./src/stats.js",
+    "./schema": "./src/schema.js",
+    "./personas": "./src/personas.js",
+    "./link": "./src/link.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.5"
+  },
+  "license": "MIT",
+  "homepage": "https://vibe-wrapped-ten.vercel.app",
+  "keywords": [
+    "claude-code",
+    "codex",
+    "cursor",
+    "wrapped",
+    "vibe-coding",
+    "stats"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

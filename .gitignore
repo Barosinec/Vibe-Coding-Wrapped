@@ -1,0 +1,9 @@
+node_modules/
+.next/
+.vercel/
+.data/
+*.tgz
+.env*
+!.env.example
+test-results/
+playwright-report/
